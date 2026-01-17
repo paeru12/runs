@@ -164,7 +164,7 @@ class RunningSessionProvider extends ChangeNotifier {
         endTime: DateTime.now(),
         totalSteps: _steps,
         totalDistance: _distance,
-        averageSpeed: averageSpeed,
+        averageSpeed: averageSpeed.toDouble(),
         durationSeconds: _elapsedSeconds,
         routePoints: _routePoints,
         dataPoints: _dataPoints,

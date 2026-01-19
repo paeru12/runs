@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 import '../models/running_session.dart';
 import '../services/database_service.dart';
-import '../services/export_service.dart';
 import 'map_screen.dart';
 
 class SessionSummaryScreen extends StatefulWidget {
@@ -388,7 +387,10 @@ class _SessionSummaryScreenState extends State<SessionSummaryScreen> {
               child: ElevatedButton.icon(
                 onPressed: () async {
                   try {
-                    await ExportService.shareSession(session);
+                    // Export functionality will be implemented later
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(content: Text('Export feature coming soon')),
+                    );
                   } catch (e) {
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(content: Text('Export failed: $e')),
@@ -411,10 +413,9 @@ class _SessionSummaryScreenState extends State<SessionSummaryScreen> {
               child: ElevatedButton.icon(
                 onPressed: () async {
                   try {
-                    final csv = await ExportService.exportToCSV(session);
-                    final summary = await ExportService.exportSessionSummary(session);
+                    // Export functionality will be implemented later
                     ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(content: Text('Run exported')),
+                      const SnackBar(content: Text('Export feature coming soon')),
                     );
                   } catch (e) {
                     ScaffoldMessenger.of(context).showSnackBar(
